@@ -1,0 +1,9 @@
+<h1>Create a new list and add movies to it</h1>
+
+<%= simple_form_for @list, html: { class: 'form-horizontal' } do |f| %>
+  <%= f.input :name, label: "List name", placeholder: "Enter a name for your list" %>
+
+  <div class="form-group">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

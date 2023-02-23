@@ -1,0 +1,14 @@
+<h1>All lists</h1>
+
+<% @lists.each do |list| %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= list.name %></h5>
+      <p class="card-text"><%= list.bookmarks.count %> bookmarks</p>
+      <%= link_to "View list", list_path(list), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+
+
+<%= link_to 'New List', new_list_path %>
