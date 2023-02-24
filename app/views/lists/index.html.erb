@@ -1,17 +1,18 @@
 <h1>All lists</h1>
 
 <div class="row m-2">
-<% @lists.each do |list| %>
-<div class="col-md-3">
-  <div class="card mb-3">
-    <div class="card-body">
-      <h5 class="card-title"><%= list.name %></h5>
-      <p class="card-text"><%= list.bookmarks.count %> bookmarks</p>
-      <%= link_to "View list", list_path(list), class: "btn btn-primary" %>
+  <% @lists.each do |list| %>
+    <div class="col-sm-4">
+      <div class="card mb-3">
+      <%= cl_image_tag list.photo.key, crop: :fill, class:"card-img-top"%>
+        <div class="card-body">
+          <h5 class="card-title"><%= list.name %></h5>
+          <p class="card-text"><%= list.bookmarks.count %> bookmarks</p>
+          <%= link_to "View list", list_path(list), class: "btn btn-primary" %>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<% end %>
+  <% end %>
 </div>
 
 
