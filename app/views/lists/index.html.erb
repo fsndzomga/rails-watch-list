@@ -1,6 +1,8 @@
 <h1>All lists</h1>
 
+<div class="row m-2">
 <% @lists.each do |list| %>
+<div class="col-md-3">
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title"><%= list.name %></h5>
@@ -8,7 +10,9 @@
       <%= link_to "View list", list_path(list), class: "btn btn-primary" %>
     </div>
   </div>
+</div>
 <% end %>
+</div>
 
 
-<%= link_to 'New List', new_list_path %>
+<%= link_to 'New List', new_list_path, class:"m-2" %>

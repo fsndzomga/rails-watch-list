@@ -11,7 +11,6 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
-    redirect_to @list
   end
 
   def create
@@ -19,16 +18,6 @@ class ListsController < ApplicationController
     @movies = Movie.all
 
     if @list.save
-      # Loop through the selected movie IDs and build a new bookmark for each one
-      params[:list][:movie_ids].each do |movie_id|
-        movie = Movie.find(movie_id)
-        bookmark = Bookmark.new
-        bookmark.list = @list
-        bookmark.movie = movie
-        puts bookmark.errors.full_messages
-        bookmark.save
-      end
-
       redirect_to @list
     else
       render :new
