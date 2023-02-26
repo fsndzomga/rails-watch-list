@@ -7,6 +7,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @movies = @list.movies
     @bookmarks = @list.bookmarks
+    @bookmark = Bookmark.new
   end
 
   def new
@@ -24,10 +25,10 @@ class ListsController < ApplicationController
     end
   end
 
-  def new_bookmark
-    @list = List.find(params[:id])
-    @bookmark = Bookmark.new
-  end
+  # def new_bookmark
+  #   @list = List.find(params[:id])
+  #   @bookmark = Bookmark.new
+  # end
 
   private
 
